@@ -146,7 +146,8 @@ and safe to turn off if it ever causes trouble; most take effect on your next
 launch rather than instantly.
 
 * `remove_mobile_ui` *(default 1)* — hides the on-screen touch buttons, since
-  you're playing with a controller.
+  you're playing with a controller. Functional puzzle controls, including
+  the LARA passcode keypad, remain visible and usable with the controller.
 * `cursor_fix` *(default 1)* — keeps selected menu text white with a dark
   highlight behind it, instead of the original's color-inverted look.
 * `remove_bilinear_filter` *(default 1)* — sharp, nearest-neighbour texture
