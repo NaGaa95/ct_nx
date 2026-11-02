@@ -37,6 +37,9 @@ field_zoom = 2
 map_zoom_fix = 1
 map_zoom = 2
 
+; --- Performance (experimental) ---
+cache_palettes = 0
+
 ; --- Input / controller ---
 native_controller = 1
 controller_glyphs = 1

@@ -51,6 +51,8 @@
   CONFIG_VAR_INT(force_nearest); \
   CONFIG_COMMENT("--- Performance ---"); \
   CONFIG_VAR_INT(fixed_timestep); \
+  CONFIG_COMMENT("--- Performance (experimental) ---"); \
+  CONFIG_VAR_INT(cache_palettes); \
   CONFIG_COMMENT("--- Enhancements ---"); \
   CONFIG_VAR_INT(remove_mobile_ui); \
   CONFIG_VAR_INT(menu_alignment_fix); \
@@ -127,6 +129,7 @@ static void set_defaults(void) {
   config.native_controller = 1;    // native controller input -> Switch-button prompts
   config.controller_glyphs = 1;    // force <BTN_*> dialogue tags to the pad glyph set
   config.fix_diagonal_movement = 1; // smooth diagonal movement (matches cardinal speed)
+  config.cache_palettes = 0;        // share world-map palette textures instead of rebuilding them per frame (experimental)
   config.right_stick_mirror = 1;    // right stick emulates the left stick (movement)
   strlcpy(config.key_zl,    "key_zl",    sizeof(config.key_zl));    // unused buttons remap to themselves by default (no-op)
   strlcpy(config.key_zr,    "key_zr",    sizeof(config.key_zr));

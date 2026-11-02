@@ -34,6 +34,7 @@
 #include "movie_player.h"
 #include "cache_progress.h"
 #include "patches.h"
+#include "palette_cache.h"
 
 static void *heap_so_base = NULL;
 static size_t heap_so_limit = 0;
@@ -824,6 +825,7 @@ int main(void) {
   // and skips safely if it encounters an unexpected instruction word, so a
   // future .so rebuild won't silently corrupt -- it just prints a warning.
   apply_game_patches(&game_mod);
+  apply_palette_cache(&game_mod);
 
   // Force the UI/text language to config.language regardless of what the engine
   // detects. resources.bin contains all languages under Localize/<code>/; the
@@ -1067,6 +1069,7 @@ int main(void) {
     if (!fi_freq2) fi_freq2 = armGetSystemTickFreq();
     const u64 t_render_start = armGetSystemTick();
 #endif
+    palette_cache_frame();
     e_nativeRender(fake_env);
 #if DEBUG_INSTR
     const u64 t_render_end = armGetSystemTick();

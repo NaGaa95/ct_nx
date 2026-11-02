@@ -179,6 +179,14 @@ typedef struct {
   //                          target every frame and reads as a stutter.
   //                          Pure visual/feel fix; no save-data impact.
   int fix_diagonal_movement;
+  // cache_palettes -- EXPERIMENTAL. 1 = sprites drawn with the palette
+  //             shader -- world-map objects (Black Omen, Ozzie's fort, the
+  //             Epoch, ...), field / battle characters and battle BG3
+  //             effects -- share one palette texture per distinct palette
+  //             instead of uploading a new one per sprite every frame
+  //             (palette_cache.c). Same texture contents. 0 = stock
+  //             (default while experimental).
+  int cache_palettes;
   // fixed_timestep -- 1 = force cocos2d's per-frame delta (Director::_deltaTime)
   //                   to a constant 1/60s instead of the measured wall-clock gap.
   //                   Vsync locks presentation to 60Hz, but the measured delta

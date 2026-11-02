@@ -132,6 +132,12 @@ It's grouped into sections; here's what each key does and its default.
 * `gl_no_error` *(default 1)* — skip mesa's internal validation of GL calls,
   removing CPU overhead on a path that fires constantly. The engine's calls are
   already well-formed, so this is safe to leave on.
+  * `cache_palettes` *(default 0)* — (experimental) every palette-shaded sprite — objects on
+  the world map (Black Omen, Ozzie's fort, the Epoch, ...), every character
+  on the field and in battle, and battle background effects — got a freshly
+  uploaded palette texture every frame; that's dozens of texture uploads per frame. With this on, sprites with
+  the same palette share one texture with identical contents. Off by default
+  while it is experimental.
 
 **Visual & movement fixes** — these smooth out a handful of quirks left over
 from the original phone version: filtering, alignment, camera zoom, and a
