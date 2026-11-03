@@ -55,7 +55,7 @@
   CONFIG_VAR_INT(cache_palettes); \
   CONFIG_COMMENT("--- Enhancements ---"); \
   CONFIG_VAR_INT(remove_mobile_ui); \
-  CONFIG_VAR_INT(menu_alignment_fix); \
+  CONFIG_VAR_INT(menu_alignment_fix);
 
 // Dev-only knobs: recognized on read (so they can still be hand-tuned in
 // config.ini) but deliberately left out of CONFIG_VARS above, so write_config

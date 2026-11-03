@@ -11,6 +11,7 @@
  * (JNI_OnLoad -> setContext/apk/assets -> nativeInit -> nativeRender loop).
  */
 
+#include "saltynx.h"
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -738,6 +739,8 @@ static void diag_scale_dump(void) {
 // ---------------------------------------------------------------------------
 
 int main(void) {
+  saltynx_start();
+  atexit(saltynx_stop);
   cpu_boost(1);
 
   // Always rewrite config.txt after parsing it: read_config seeds defaults

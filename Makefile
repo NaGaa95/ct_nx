@@ -46,6 +46,9 @@ LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*
 # shader pipeline cocos2d-x renders with (pulled in by mesa). FreeType+libpng
 # implement the system-font label raster (createTextBitmapShadowStroke). ffmpeg
 # (+codec deps) decodes the FMV cutscenes (assets/001.dat..008.dat, H.264/AAC).
+# Publish all EGL presentation paths, including guest import tables.
+LDFLAGS += -Wl,--wrap=eglSwapBuffers,--wrap=eglGetProcAddress,--wrap=__libnx_exit
+
 LIBS	:= -lSDL2 -lGLESv2 -lEGL -lglapi -ldrm_nouveau \
 			-Wl,--start-group -lavformat -lavcodec -lswresample -lswscale -lavutil \
 			-ldav1d -lopus -lvorbisidec -lwebp -logg -Wl,--end-group \
