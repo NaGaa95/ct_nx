@@ -282,7 +282,3 @@ Unless specified otherwise, the source code provided in this repository is
 licensed under the [MIT License](/LICENSE).
 
 The included font is licensed under [CC BY-NC-SA 3.0](https://github.com/ppkantorski/ct_nx/blob/main/font/ChronoType/license.txt) and is not covered by this project's license.
-
-### SaltyNX telemetry
-
-FPS and render resolution are published to SaltyNX shared memory for compatible overlays. The port continues normally when SaltyNX is not running. This reports presentation timing and resolution; it does not change the game's frame cap.
